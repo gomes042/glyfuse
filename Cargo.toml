@@ -1,0 +1,17 @@
+[package]
+name = "glyfuse"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Portable Unicode glyph and RGB file icon themes for terminal applications"
+repository = "https://github.com/gomes042/glyfuse"
+readme = "README.md"
+
+[dependencies]
+anyhow = "1"
+crossterm = "0.29"
+globset = "0.4"
+ratatui = "0.30.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+

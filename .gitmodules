@@ -1,0 +1,3 @@
+[submodule "glyfuse-bat/upstream"]
+	path = glyfuse-bat/upstream
+	url = https://github.com/sharkdp/bat.git

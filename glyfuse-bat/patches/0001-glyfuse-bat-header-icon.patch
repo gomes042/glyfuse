@@ -1,0 +1,257 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index fa7800c..b953a0a 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -162,6 +162,7 @@ dependencies = [
+  "semver",
+  "serde",
+  "serde_derive",
++ "serde_json",
+  "serde_with",
+  "serde_yaml",
+  "serial_test",
+diff --git a/Cargo.toml b/Cargo.toml
+index 8d8a3be..00f5879 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -58,6 +58,7 @@ minus = { version = "5.7", optional = true, features = [
+ unicode-width = "0.2.2"
+ globset = "0.4"
+ serde = "1.0"
++serde_json = "1.0"
+ serde_derive = "1.0"
+ serde_yaml = "0.9.28"
+ semver = "1.0"
+diff --git a/src/glyfuse.rs b/src/glyfuse.rs
+new file mode 100644
+index 0000000..55c5c01
+--- /dev/null
++++ b/src/glyfuse.rs
+@@ -0,0 +1,184 @@
++//! Optional Glyfuse v1 snapshot reader. Kept independent of the Glyfuse crate.
++
++use std::collections::HashMap;
++use std::env;
++use std::fs;
++use std::path::PathBuf;
++use std::sync::LazyLock;
++
++use globset::{GlobBuilder, GlobMatcher};
++use nu_ansi_term::Color;
++use serde_derive::Deserialize;
++
++#[derive(Deserialize)]
++struct Icon {
++    glyph: String,
++    color: String,
++}
++
++impl Icon {
++    fn rgb(&self) -> Option<(u8, u8, u8)> {
++        if self.glyph.is_empty()
++            || self.glyph.chars().any(char::is_control)
++            || self.color.len() != 7
++        {
++            return None;
++        }
++        let n = u32::from_str_radix(self.color.strip_prefix('#')?, 16).ok()?;
++        Some(((n >> 16) as u8, (n >> 8) as u8, n as u8))
++    }
++}
++
++#[derive(Deserialize)]
++struct Fallbacks {
++    file: Icon,
++}
++
++#[derive(Deserialize)]
++struct Rule {
++    kind: String,
++    pattern: String,
++    icon: Icon,
++}
++
++#[derive(Deserialize)]
++struct Snapshot {
++    format: u32,
++    inherits: Option<String>,
++    fallbacks: Fallbacks,
++    rules: Vec<Rule>,
++}
++
++struct Resolver {
++    fallback: Icon,
++    rules: Vec<Rule>,
++    files: HashMap<String, usize>,
++    extensions: HashMap<String, usize>,
++    paths: Vec<(usize, GlobMatcher)>,
++}
++
++impl Resolver {
++    fn parse(text: &str) -> Option<Self> {
++        let theme: Snapshot = serde_json::from_str(text).ok()?;
++        if theme.format != 1 || theme.inherits.is_some() || theme.fallbacks.file.rgb().is_none() {
++            return None;
++        }
++        let (mut files, mut extensions, mut paths) = (HashMap::new(), HashMap::new(), Vec::new());
++        for (i, rule) in theme.rules.iter().enumerate() {
++            if rule.icon.rgb().is_none() || rule.pattern.is_empty() {
++                return None;
++            }
++            let key = rule.pattern.to_lowercase();
++            match rule.kind.as_str() {
++                "file" => {
++                    files.insert(key, i);
++                }
++                "extension" => {
++                    extensions.insert(key, i);
++                }
++                "path" => paths.push((
++                    i,
++                    GlobBuilder::new(&rule.pattern)
++                        .case_insensitive(true)
++                        .build()
++                        .ok()?
++                        .compile_matcher(),
++                )),
++                "folder" => (),
++                _ => return None,
++            }
++        }
++        Some(Self {
++            fallback: theme.fallbacks.file,
++            rules: theme.rules,
++            files,
++            extensions,
++            paths,
++        })
++    }
++
++    fn resolve(&self, path: &str) -> &Icon {
++        let path = path.replace('\\', "/");
++        let name = path.rsplit('/').next().unwrap_or("").to_lowercase();
++        let glob = self
++            .paths
++            .iter()
++            .rev()
++            .find(|(_, m)| m.is_match(&path))
++            .map(|(i, _)| *i);
++        let exact = self.files.get(&name).copied();
++        let ext = name
++            .match_indices('.')
++            .filter_map(|(dot, _)| {
++                self.extensions
++                    .get(&name[dot + 1..])
++                    .map(|i| (name.len() - dot, *i))
++            })
++            .max()
++            .map(|(_, i)| i);
++        glob.or(exact)
++            .or(ext)
++            .map_or(&self.fallback, |i| &self.rules[i].icon)
++    }
++}
++
++fn snapshot_path() -> Option<PathBuf> {
++    if let Some(path) = env::var_os("BAT_GLYFUSE_THEME").or_else(|| env::var_os("GLYFUSE_THEME")) {
++        return Some(PathBuf::from(path));
++    }
++    if let Some(root) = env::var_os("GLYFUSE_HOME") {
++        return Some(PathBuf::from(root).join("active.json"));
++    }
++    if cfg!(windows) {
++        Some(PathBuf::from(env::var_os("APPDATA")?).join("glyfuse/active.json"))
++    } else {
++        Some(
++            env::var_os("XDG_CONFIG_HOME")
++                .map(PathBuf::from)
++                .or_else(|| env::var_os("HOME").map(|p| PathBuf::from(p).join(".config")))?
++                .join("glyfuse/active.json"),
++        )
++    }
++}
++
++static THEME: LazyLock<Option<Resolver>> =
++    LazyLock::new(|| Resolver::parse(&fs::read_to_string(snapshot_path()?).ok()?));
++
++/// Return a separately colored glyph prefix, or None to retain upstream header.
++pub(super) fn header_icon(filename: &str, color_output: bool, true_color: bool) -> Option<String> {
++    if !matches!(
++        env::var("BAT_GLYFUSE").ok().as_deref(),
++        Some("1") | Some("true")
++    ) {
++        return None;
++    }
++    let icon = THEME.as_ref()?.resolve(filename);
++    let (r, g, b) = icon.rgb()?;
++    let marker = format!("{} ", icon.glyph);
++    if color_output {
++        let color = if true_color {
++            Color::Rgb(r, g, b)
++        } else {
++            Color::Fixed(ansi_colours::ansi256_from_rgb((r, g, b)))
++        };
++        Some(color.paint(marker).to_string())
++    } else {
++        Some(marker)
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn exact_name_and_compound_extension_override_fallback() {
++        let json = r##"{"format":1,"fallbacks":{"file":{"glyph":"F","color":"#ffffff"}},"rules":[{"kind":"extension","pattern":"rs","icon":{"glyph":"R","color":"#ff7043"}},{"kind":"extension","pattern":"schema.json","icon":{"glyph":"S","color":"#abcdef"}},{"kind":"file","pattern":"readme.rs","icon":{"glyph":"M","color":"#000000"}}]}"##;
++        let theme = Resolver::parse(json).unwrap();
++        assert_eq!(theme.resolve("src/main.rs").glyph, "R");
++        assert_eq!(theme.resolve("a/schema.schema.json").glyph, "S");
++        assert_eq!(theme.resolve("README.RS").glyph, "M");
++        assert_eq!(theme.resolve("unknown").glyph, "F");
++        assert!(Resolver::parse("{}").is_none());
++    }
++}
+diff --git a/src/lib.rs b/src/lib.rs
+index 685214d..3e632c4 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -32,6 +32,7 @@ pub mod controller;
+ mod decorations;
+ mod diff;
+ pub mod error;
++mod glyfuse;
+ pub mod input;
+ mod less;
+ #[cfg(feature = "lessopen")]
+diff --git a/src/printer.rs b/src/printer.rs
+index 93a79e5..d1b0623 100644
+--- a/src/printer.rs
++++ b/src/printer.rs
+@@ -554,15 +554,23 @@ impl Printer for InteractivePrinter<'_> {
+             .iter()
+             .try_for_each(|component| match component {
+                 StyleComponent::HeaderFilename => {
++                    let title = sanitize_for_terminal(description.title());
++                    let rendered_title = crate::glyfuse::header_icon(
++                        description.title(),
++                        self.config.colored_output,
++                        self.config.true_color,
++                    )
++                    .map_or_else(
++                        || self.colors.header_value.paint(title.as_str()).to_string(),
++                        |prefix| format!("{prefix}{title}"),
++                    );
+                     let header_filename = format!(
+                         "{}{}{mode}",
+                         description
+                             .kind()
+                             .map(|kind| format!("{}: ", sanitize_for_terminal(kind)))
+                             .unwrap_or_else(|| "".into()),
+-                        self.colors
+-                            .header_value
+-                            .paint(sanitize_for_terminal(description.title())),
++                        rendered_title,
+                     );
+                     self.print_header_multiline_component(handle, &header_filename)
+                 }
