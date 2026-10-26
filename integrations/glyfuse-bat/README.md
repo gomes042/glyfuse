@@ -19,8 +19,8 @@ invalid theme snapshot, original upstream behavior is preserved.
 From the Glyfuse repository root:
 
 ```sh
-git submodule update --init glyfuse-bat/upstream
-cd glyfuse-bat/upstream
+git submodule update --init integrations/glyfuse-bat/upstream
+cd integrations/glyfuse-bat/upstream
 git apply --check ../patches/0001-glyfuse-bat-header-icon.patch
 git apply ../patches/0001-glyfuse-bat-header-icon.patch
 cargo test --lib
@@ -53,7 +53,7 @@ To return the submodule to the pinned, clean upstream state **after applying**
 the patch (assuming no additional personal edits inside the submodule):
 
 ```sh
-cd glyfuse-bat/upstream
+cd integrations/glyfuse-bat/upstream
 git apply -R ../patches/0001-glyfuse-bat-header-icon.patch
 ```
 

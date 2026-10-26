@@ -1334,7 +1334,7 @@
       "kind": "folder",
       "pattern": "vue",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#009688"
       },
       "source_icon": "folder-vue"
@@ -6563,7 +6563,7 @@
       "kind": "folder",
       "pattern": "directives",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#00838f"
       },
       "source_icon": "folder-vue-directives"
@@ -6572,7 +6572,7 @@
       "kind": "folder",
       "pattern": "components",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#009688"
       },
       "source_icon": "folder-vue"
@@ -9308,7 +9308,7 @@
       "kind": "extension",
       "pattern": "xml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9317,7 +9317,7 @@
       "kind": "extension",
       "pattern": "plist",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9326,7 +9326,7 @@
       "kind": "extension",
       "pattern": "xsd",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9335,7 +9335,7 @@
       "kind": "extension",
       "pattern": "dtd",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9344,7 +9344,7 @@
       "kind": "extension",
       "pattern": "xsl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9353,7 +9353,7 @@
       "kind": "extension",
       "pattern": "xslt",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9362,7 +9362,7 @@
       "kind": "extension",
       "pattern": "resx",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9371,7 +9371,7 @@
       "kind": "extension",
       "pattern": "iml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9380,7 +9380,7 @@
       "kind": "extension",
       "pattern": "xquery",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9389,7 +9389,7 @@
       "kind": "extension",
       "pattern": "tmlanguage",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9398,7 +9398,7 @@
       "kind": "extension",
       "pattern": "manifest",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9407,7 +9407,7 @@
       "kind": "extension",
       "pattern": "project",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9416,7 +9416,7 @@
       "kind": "extension",
       "pattern": "xml.dist",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9425,7 +9425,7 @@
       "kind": "extension",
       "pattern": "xml.dist.sample",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9434,7 +9434,7 @@
       "kind": "extension",
       "pattern": "dmn",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9443,7 +9443,7 @@
       "kind": "extension",
       "pattern": "jrxml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9452,7 +9452,7 @@
       "kind": "extension",
       "pattern": "xmp",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9461,7 +9461,7 @@
       "kind": "extension",
       "pattern": "ascx",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9470,7 +9470,7 @@
       "kind": "extension",
       "pattern": "atom",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9479,7 +9479,7 @@
       "kind": "extension",
       "pattern": "axaml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9488,7 +9488,7 @@
       "kind": "extension",
       "pattern": "axml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9497,7 +9497,7 @@
       "kind": "extension",
       "pattern": "bpmn",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9506,7 +9506,7 @@
       "kind": "extension",
       "pattern": "csl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9515,7 +9515,7 @@
       "kind": "extension",
       "pattern": "csproj.user",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9524,7 +9524,7 @@
       "kind": "extension",
       "pattern": "dita",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9533,7 +9533,7 @@
       "kind": "extension",
       "pattern": "ditamap",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9542,7 +9542,7 @@
       "kind": "extension",
       "pattern": "dtml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9551,7 +9551,7 @@
       "kind": "extension",
       "pattern": "ent",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9560,7 +9560,7 @@
       "kind": "extension",
       "pattern": "fxml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9569,7 +9569,7 @@
       "kind": "extension",
       "pattern": "isml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9578,7 +9578,7 @@
       "kind": "extension",
       "pattern": "jmx",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9587,7 +9587,7 @@
       "kind": "extension",
       "pattern": "launch",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9596,7 +9596,7 @@
       "kind": "extension",
       "pattern": "menu",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9605,7 +9605,7 @@
       "kind": "extension",
       "pattern": "opml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9614,7 +9614,7 @@
       "kind": "extension",
       "pattern": "owl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9623,7 +9623,7 @@
       "kind": "extension",
       "pattern": "proj",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9632,7 +9632,7 @@
       "kind": "extension",
       "pattern": "publishsettings",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9641,7 +9641,7 @@
       "kind": "extension",
       "pattern": "pubxml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9650,7 +9650,7 @@
       "kind": "extension",
       "pattern": "pubxml.user",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9659,7 +9659,7 @@
       "kind": "extension",
       "pattern": "rdf",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9668,7 +9668,7 @@
       "kind": "extension",
       "pattern": "rng",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9677,7 +9677,7 @@
       "kind": "extension",
       "pattern": "rss",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9686,7 +9686,7 @@
       "kind": "extension",
       "pattern": "shproj",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9695,7 +9695,7 @@
       "kind": "extension",
       "pattern": "storyboard",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9704,7 +9704,7 @@
       "kind": "extension",
       "pattern": "targets",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9713,7 +9713,7 @@
       "kind": "extension",
       "pattern": "tld",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9722,7 +9722,7 @@
       "kind": "extension",
       "pattern": "tmx",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9731,7 +9731,7 @@
       "kind": "extension",
       "pattern": "vbproj",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9740,7 +9740,7 @@
       "kind": "extension",
       "pattern": "vbproj.user",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9749,7 +9749,7 @@
       "kind": "extension",
       "pattern": "wsdl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9758,7 +9758,7 @@
       "kind": "extension",
       "pattern": "wxi",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9767,7 +9767,7 @@
       "kind": "extension",
       "pattern": "wxl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9776,7 +9776,7 @@
       "kind": "extension",
       "pattern": "wxs",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9785,7 +9785,7 @@
       "kind": "extension",
       "pattern": "xbl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9794,7 +9794,7 @@
       "kind": "extension",
       "pattern": "xib",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9803,7 +9803,7 @@
       "kind": "extension",
       "pattern": "xliff",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9812,7 +9812,7 @@
       "kind": "extension",
       "pattern": "xoml",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9821,7 +9821,7 @@
       "kind": "extension",
       "pattern": "xpdl",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -9830,7 +9830,7 @@
       "kind": "extension",
       "pattern": "xul",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -11954,7 +11954,7 @@
       "kind": "extension",
       "pattern": "cs",
       "icon": {
-        "glyph": "b",
+        "glyph": "󰌛",
         "color": "#0288d1"
       },
       "source_icon": "csharp"
@@ -11963,7 +11963,7 @@
       "kind": "extension",
       "pattern": "csx",
       "icon": {
-        "glyph": "b",
+        "glyph": "󰌛",
         "color": "#0288d1"
       },
       "source_icon": "csharp"
@@ -11972,7 +11972,7 @@
       "kind": "extension",
       "pattern": "csharp",
       "icon": {
-        "glyph": "b",
+        "glyph": "󰌛",
         "color": "#0288d1"
       },
       "source_icon": "csharp"
@@ -15716,7 +15716,7 @@
       "kind": "extension",
       "pattern": "vue",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#41b883"
       },
       "source_icon": "vue"
@@ -21908,7 +21908,7 @@
       "kind": "file",
       "pattern": ".htaccess",
       "icon": {
-        "glyph": "0",
+        "glyph": "󰗀",
         "color": "#8bc34a"
       },
       "source_icon": "xml"
@@ -24626,7 +24626,7 @@
       "kind": "file",
       "pattern": "vue.config.js",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24635,7 +24635,7 @@
       "kind": "file",
       "pattern": "vue.config.cjs",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24644,7 +24644,7 @@
       "kind": "file",
       "pattern": "vue.config.mjs",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24653,7 +24653,7 @@
       "kind": "file",
       "pattern": "vue.config.ts",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24662,7 +24662,7 @@
       "kind": "file",
       "pattern": "vetur.config.js",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24671,7 +24671,7 @@
       "kind": "file",
       "pattern": "vetur.config.ts",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24680,7 +24680,7 @@
       "kind": "file",
       "pattern": "volar.config.js",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
@@ -24689,7 +24689,7 @@
       "kind": "file",
       "pattern": ".vuerc",
       "icon": {
-        "glyph": "5",
+        "glyph": "󰱅",
         "color": "#757575"
       },
       "source_icon": "vue-config"
