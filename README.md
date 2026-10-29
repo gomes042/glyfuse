@@ -1,19 +1,57 @@
 # Glyfuse
 
-**Shared Unicode glyph + RGB color themes for terminal tools.** Glyfuse is a Rust resolver library and CLI with configurable JSON themes, a live inspector, and integrations that can read a common theme snapshot without depending on its executable.
+**The same icons and colors across your terminal applications.** Glyfuse makes files and folders look consistent wherever you encounter them. Use one theme with tools such as eza and a patched version of `bat`.
 
-Glyfuse does not render SVGs, install fonts, or detect which glyphs your terminal font supports. The bundled Material-inspired glyphs are approximate Nerd Font symbols; use a [Nerd Font](https://www.nerdfonts.com/) or `--ascii` in CLI/inspector.
+## Preview
+
+### [eza](https://github.com/eza-community/eza) · [Glyfuse theme exporter](integrations/glyfuse-eza/README.md)
+
+![Side-by-side terminal listing: default eza and eza with Glyfuse icons](media/eza-comparison.png)
+
+*Illustrative comparison of `eza`'s stock icons and Glyfuse's generated Material icon theme. Icons and their colors change; eza still controls filename styling.*
+
+### [bat](https://github.com/sharkdp/bat) · [Glyfuse patch](integrations/glyfuse-bat/README.md)
+
+![Side-by-side terminal output: stock bat and bat with Glyfuse](media/bat-comparison.png)
+
+*Illustrative comparison of `bat` with and without the optional Glyfuse patch. The patch adds a colored icon before the header filename; the rest of bat's output is unchanged.*
+
+## Why Glyfuse?
+
+Terminal applications often ship their own file-icon mappings. The same `README.md`, `src/` folder, or `.rs` file can end up with a different symbol and color in every tool. Glyfuse provides **one configurable resolver** and a shared theme snapshot, so a file keeps the **same icon and color in different terminal applications**.
+
+- **Consistent icons:** one theme for files, folders, compound extensions, and paths.
+- **Works without a running service:** `glyfuse theme use` writes a resolved JSON snapshot; integrations load it without invoking Glyfuse.
+- **Easy to customize:** inherit the bundled Material-inspired theme and override just the rules you need.
+- **Inspectable:** explore icon associations with the interactive terminal inspector.
+
+Glyfuse is a Rust library and CLI, **not** a font installer or SVG renderer. The bundled icons use approximate [Nerd Font](https://www.nerdfonts.com/) glyphs. Choose a compatible terminal font, or use `--ascii` for plain-text CLI output.
+
+## Quick start
+
+Requires a recent stable Rust toolchain and Cargo. From a clone of this repository:
+
+```sh
+cargo install --path .
+glyfuse theme use material
+glyfuse resolve README.md --file
+glyfuse resolve src/ --folder --json
+glyfuse inspect --tui
+```
+
+`theme use` creates a **shared `active.json` theme snapshot**. [Build the optional bat patch](integrations/glyfuse-bat/README.md) and set `BAT_GLYFUSE=1` to make patched bat read that snapshot. For stock eza, run `glyfuse export eza --output PATH_TO_EZA_CONFIG/theme.yml` to generate its icon configuration.
 
 ## Feature status
 
 - **Implemented:** Rust library, CLI `theme list/use/show`, `resolve`, text and interactive TUI `inspect`; versioned themes with inheritance, overrides, path globs, and fallbacks.
 - **Implemented:** bundled 3,550 Material Icon Theme-derived associations (963 folders, 1,148 filenames, 1,439 extensions). Associations and sampled SVG colors come from upstream; Unicode glyphs are approximations.
-- **Implemented separately:** LazySC's optional built-in JSON reader and a source patch for bat's filename header icon. Stock bat is unchanged.
+- **Implemented separately:** a source patch for bat's filename header icon. Stock bat is unchanged.
+- **Implemented:** eza `theme.yml` icon exporter; works with stock eza and requires re-exporting after Glyfuse theme changes.
 - **Planned only:** Neovim tree/explorer integrations, SVG display, font probing, automatic synchronization, package release.
 
-## Build and CLI
+## CLI reference
 
-Requires a recent stable Rust/Cargo toolchain, and an ANSI/Unicode terminal for visual output.
+For development and additional commands:
 
 ```sh
 cargo test --all-targets
@@ -30,6 +68,7 @@ glyfuse resolve archive.tar.gz --json
 glyfuse resolve unknown.xyz --ascii --no-color
 glyfuse inspect --ascii
 glyfuse inspect --tui
+glyfuse export eza --output ./theme.yml
 glyfuse --theme material resolve src --folder --json
 ```
 
@@ -81,16 +120,20 @@ Override the parent directory with `GLYFUSE_HOME`. `GLYFUSE_THEME=/absolute/path
 | Application | Status | Enablement | Glyfuse runtime dependency? |
 | --- | --- | --- | --- |
 | Glyfuse CLI/library | Implemented | Built in | Native component |
-| **LazySC** | **Built-in, opt-in** | `[source_control] glyfuse_icons = true` in LazySC config; activate snapshot, restart | **No**; reads JSON independently |
-| **bat** | **Patched source only** | Apply `glyfuse-bat/patches/0001-glyfuse-bat-header-icon.patch`, rebuild, `BAT_GLYFUSE=1` | **No**; patched bat reads JSON independently |
+| **bat** | **Patched source only** | Apply [`integrations/glyfuse-bat/patches/0001-glyfuse-bat-header-icon.patch`](integrations/glyfuse-bat/patches/0001-glyfuse-bat-header-icon.patch), rebuild, set `BAT_GLYFUSE=1` | **No**; patched bat reads JSON independently |
+| **eza** | **Stock eza, generated config** | Export `theme.yml` using [`glyfuse export eza`](integrations/glyfuse-eza/README.md), then run eza with `--icons=always` | **No**; eza reads YAML independently |
 | Neovim file trees and other terminal tools | Future | No integration shipped | TBD |
 
-LazySC colors folder and file icons in its source-control sidebar without changing its Git status display or navigation. Missing/invalid snapshots leave its original icon-free UI. See the [LazySC README](../lazysc/README.md) for configuration.
+The modified bat colors **only the icon prefix before the header filename**. The filename itself is plain/uncolored; body syntax highlighting stays upstream. If disabled or no valid snapshot is found, the usual bat header remains. **Unmodified bat does not support Glyfuse.** See the [bat patch guide](integrations/glyfuse-bat/README.md) for build, patch, verification, and update steps.
 
-The modified bat colors **only the icon prefix before the header filename**. The filename itself is plain/uncolored; body syntax highlighting stays upstream. If disabled or no valid snapshot is found, the usual bat header remains. **Unmodified bat does not support Glyfuse.** See the [bat patch guide](glyfuse-bat/README.md) for build, patch, verification and update steps.
+The eza exporter produces a standard `theme.yml` containing file and folder name and simple-extension icon overrides. It preserves eza's filename colors and does not need a patched binary. Re-run the export when the Glyfuse theme changes. See the [eza setup guide](integrations/glyfuse-eza/README.md) for platform-specific paths and format limitations.
 
-## Material provenance and license
+## Material theme provenance
 
-The [bundled Material preset](themes/material.json) and [import script](scripts/import_material.mjs) adapt definitions and color values from [Material Icon Theme](https://github.com/material-extensions/vscode-material-icon-theme), copyright © 2025 Material Extensions, licensed MIT, pinned at commit `1a9d4b3d478d7fd1c49a86ea371ec6a8b505b097`. SVG files are read for color sampling during import, **never shipped or rendered**; many associations use generic approximated symbols. Some sampled colors can differ from upstream's composited SVG appearance. See [third-party license](THIRD_PARTY_LICENSES.md).
+The [bundled Material preset](themes/material.json) adapts definitions and color values from [Material Icon Theme](https://github.com/material-extensions/vscode-material-icon-theme), copyright © 2025 Material Extensions, licensed MIT, pinned at commit `1a9d4b3d478d7fd1c49a86ea371ec6a8b505b097`. SVG files were used for color sampling during import, **never shipped or rendered**; many associations use generic approximated symbols. Some sampled colors can differ from upstream's composited SVG appearance. See [third-party notices](THIRD_PARTY_LICENSES.md).
 
-Regenerate deliberately by checking out Material Icon Theme separately and running `node scripts/import_material.mjs PATH_TO_CHECKOUT`. Review the changes, then run tests. Original Glyfuse code is [MIT](LICENSE). The separate bat submodule is licensed **MIT OR Apache-2.0** and retains upstream license files. No binaries have been published.
+## 📜 License
+
+Glyfuse is licensed under the [MIT License](LICENSE). The Material-derived theme includes third-party material covered by the [third-party notices](THIRD_PARTY_LICENSES.md). The separate upstream `bat` submodule is licensed **MIT OR Apache-2.0** and retains its own license files.
+
+No prebuilt Glyfuse or patched-bat binaries are published here; build them from source.

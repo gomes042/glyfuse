@@ -1,8 +1,10 @@
+mod eza;
 mod tui;
 
 use anyhow::{Context, Result, bail};
 use glyfuse::{Kind, Resolver, Theme, use_theme};
 use std::env;
+use std::io::Write;
 use std::io::{self, IsTerminal};
 
 const HELP: &str = r#"glyfuse — shared terminal icon themes (glyph + RGB color)
@@ -13,6 +15,7 @@ Usage:
   glyfuse theme show
   glyfuse resolve PATH [--folder|--file] [--expanded] [--json] [--ascii] [--no-color]
   glyfuse inspect [--tui] [--ascii]
+  glyfuse export eza [--output PATH] [--force]
 
 Global:
   --theme material|PATH.json   Select theme for this invocation
@@ -128,6 +131,30 @@ fn main() -> Result<()> {
                     };
                     println!("{kind:10} {:30} {glyph} {}", rule.pattern, rule.icon.color);
                 }
+            }
+        }
+        "export" => {
+            let output = take_option(&mut args, "--output")?;
+            let force = take_flag(&mut args, "--force");
+            if args != ["eza"] || (force && output.is_none()) {
+                bail!("expected export eza [--output PATH] [--force]");
+            }
+            let yaml = eza::render(&selected);
+            if let Some(path) = output {
+                let mut opts = std::fs::OpenOptions::new();
+                opts.write(true);
+                if force {
+                    opts.create(true).truncate(true);
+                } else {
+                    opts.create_new(true);
+                }
+                let mut file = opts
+                    .open(&path)
+                    .with_context(|| format!("opening {path} (existing files require --force)"))?;
+                file.write_all(yaml.as_bytes())?;
+                println!("Exported eza theme to {path}");
+            } else {
+                print!("{yaml}");
             }
         }
         _ => bail!("unknown command {cmd:?}; see glyfuse --help"),

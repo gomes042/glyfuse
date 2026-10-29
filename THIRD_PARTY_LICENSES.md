@@ -32,7 +32,7 @@ THE SOFTWARE.
 
 ## bat
 
-The `glyfuse-bat/upstream` git submodule tracks
+The `integrations/glyfuse-bat/upstream` git submodule tracks
 [sharkdp/bat](https://github.com/sharkdp/bat) at commit
 `a9aa73d215455a479f072da75dd39f19826acfea` (v0.26.1).
 bat is licensed **MIT OR Apache-2.0**. Its full license files remain in its
