@@ -9839,8 +9839,8 @@
       "kind": "extension",
       "pattern": "toml",
       "icon": {
-        "glyph": "",
-        "color": "#cfd8dc"
+        "glyph": "",
+        "color": "#EF5350"
       },
       "source_icon": "toml"
     },
@@ -9848,8 +9848,8 @@
       "kind": "extension",
       "pattern": "tosd",
       "icon": {
-        "glyph": "",
-        "color": "#cfd8dc"
+        "glyph": "",
+        "color": "#EF5350"
       },
       "source_icon": "toml"
     },
@@ -19775,8 +19775,8 @@
       "kind": "extension",
       "pattern": "tsconfig.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -25805,8 +25805,8 @@
       "kind": "file",
       "pattern": "readme.md",
       "icon": {
-        "glyph": "",
-        "color": "#42a5f5"
+        "glyph": "󰋼",
+        "color": "#42A5F5"
       },
       "source_icon": "readme"
     },
@@ -25814,8 +25814,8 @@
       "kind": "file",
       "pattern": "readme.rst",
       "icon": {
-        "glyph": "",
-        "color": "#42a5f5"
+        "glyph": "󰋼",
+        "color": "#42A5F5"
       },
       "source_icon": "readme"
     },
@@ -25823,8 +25823,8 @@
       "kind": "file",
       "pattern": "readme.txt",
       "icon": {
-        "glyph": "",
-        "color": "#42a5f5"
+        "glyph": "󰋼",
+        "color": "#42A5F5"
       },
       "source_icon": "readme"
     },
@@ -25832,8 +25832,8 @@
       "kind": "file",
       "pattern": "readme",
       "icon": {
-        "glyph": "",
-        "color": "#42a5f5"
+        "glyph": "󰋼",
+        "color": "#42A5F5"
       },
       "source_icon": "readme"
     },
@@ -26345,8 +26345,8 @@
       "kind": "file",
       "pattern": ".editorconfig",
       "icon": {
-        "glyph": "",
-        "color": "#ede7f6"
+        "glyph": "",
+        "color": "#FAFAFA"
       },
       "source_icon": "editorconfig"
     },
@@ -26354,8 +26354,8 @@
       "kind": "file",
       "pattern": ".editorconfig-checker.json",
       "icon": {
-        "glyph": "",
-        "color": "#ede7f6"
+        "glyph": "",
+        "color": "#FAFAFA"
       },
       "source_icon": "editorconfig"
     },
@@ -26363,8 +26363,8 @@
       "kind": "file",
       "pattern": ".ecrc",
       "icon": {
-        "glyph": "",
-        "color": "#ede7f6"
+        "glyph": "",
+        "color": "#FAFAFA"
       },
       "source_icon": "editorconfig"
     },
@@ -26388,10 +26388,118 @@
     },
     {
       "kind": "file",
+      "pattern": "eslint.config.js",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": "eslint.config.mjs",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": "eslint.config.cjs",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": "eslint.config.ts",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": "eslint.config.mts",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": "eslint.config.cts",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": ".eslintrc",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": ".eslintrc.js",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": ".eslintrc.cjs",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": ".eslintrc.json",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": ".eslintrc.yaml",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
+      "pattern": ".eslintrc.yml",
+      "icon": {
+        "glyph": "",
+        "color": "#4B32C3"
+      },
+      "source_icon": "eslint"
+    },
+    {
+      "kind": "file",
       "pattern": ".eslintrc-md.js",
       "icon": {
-        "glyph": "",
-        "color": "#3f51b5"
+        "glyph": "",
+        "color": "#4B32C3"
       },
       "source_icon": "eslint"
     },
@@ -26399,8 +26507,8 @@
       "kind": "file",
       "pattern": ".eslintrc-jsdoc.js",
       "icon": {
-        "glyph": "",
-        "color": "#3f51b5"
+        "glyph": "",
+        "color": "#4B32C3"
       },
       "source_icon": "eslint"
     },
@@ -26408,8 +26516,8 @@
       "kind": "file",
       "pattern": ".eslintrc.base.json",
       "icon": {
-        "glyph": "",
-        "color": "#3f51b5"
+        "glyph": "",
+        "color": "#4B32C3"
       },
       "source_icon": "eslint"
     },
@@ -26417,8 +26525,8 @@
       "kind": "file",
       "pattern": ".eslintignore",
       "icon": {
-        "glyph": "",
-        "color": "#3f51b5"
+        "glyph": "",
+        "color": "#4B32C3"
       },
       "source_icon": "eslint"
     },
@@ -26426,8 +26534,8 @@
       "kind": "file",
       "pattern": ".eslintcache",
       "icon": {
-        "glyph": "",
-        "color": "#3f51b5"
+        "glyph": "",
+        "color": "#4B32C3"
       },
       "source_icon": "eslint"
     },
@@ -26435,8 +26543,8 @@
       "kind": "file",
       "pattern": "eslint-options.js",
       "icon": {
-        "glyph": "",
-        "color": "#3f51b5"
+        "glyph": "",
+        "color": "#4B32C3"
       },
       "source_icon": "eslint"
     },
@@ -26919,10 +27027,118 @@
     },
     {
       "kind": "file",
+      "pattern": ".prettierrc",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.json",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.js",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.cjs",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.mjs",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.yaml",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.yml",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": ".prettierrc.toml",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": "prettier.config.js",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": "prettier.config.cjs",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": "prettier.config.mjs",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
+      "pattern": "prettier.config.ts",
+      "icon": {
+        "glyph": "",
+        "color": "#F44336"
+      },
+      "source_icon": "prettier"
+    },
+    {
+      "kind": "file",
       "pattern": ".prettierignore",
       "icon": {
-        "glyph": "",
-        "color": "#f44336"
+        "glyph": "",
+        "color": "#F44336"
       },
       "source_icon": "prettier"
     },
@@ -29117,8 +29333,8 @@
       "kind": "file",
       "pattern": "tsconfig.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29126,8 +29342,8 @@
       "kind": "file",
       "pattern": "tsconfig.app.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29135,8 +29351,8 @@
       "kind": "file",
       "pattern": "tsconfig.editor.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29144,8 +29360,8 @@
       "kind": "file",
       "pattern": "tsconfig.spec.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29153,8 +29369,8 @@
       "kind": "file",
       "pattern": "tsconfig.base.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29162,8 +29378,8 @@
       "kind": "file",
       "pattern": "tsconfig.build.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29171,8 +29387,8 @@
       "kind": "file",
       "pattern": "tsconfig.eslint.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29180,8 +29396,8 @@
       "kind": "file",
       "pattern": "tsconfig.lib.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29189,8 +29405,8 @@
       "kind": "file",
       "pattern": "tsconfig.lib.prod.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29198,8 +29414,8 @@
       "kind": "file",
       "pattern": "tsconfig.node.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29207,8 +29423,8 @@
       "kind": "file",
       "pattern": "tsconfig.test.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29216,8 +29432,8 @@
       "kind": "file",
       "pattern": "tsconfig.e2e.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29225,8 +29441,8 @@
       "kind": "file",
       "pattern": "tsconfig.web.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29234,8 +29450,8 @@
       "kind": "file",
       "pattern": "tsconfig.webworker.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29243,8 +29459,8 @@
       "kind": "file",
       "pattern": "tsconfig.worker.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29252,8 +29468,8 @@
       "kind": "file",
       "pattern": "tsconfig.config.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29261,8 +29477,8 @@
       "kind": "file",
       "pattern": "tsconfig.vitest.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29270,8 +29486,8 @@
       "kind": "file",
       "pattern": "tsconfig.cjs.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29279,8 +29495,8 @@
       "kind": "file",
       "pattern": "tsconfig.esm.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29288,8 +29504,8 @@
       "kind": "file",
       "pattern": "tsconfig.mjs.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29297,8 +29513,8 @@
       "kind": "file",
       "pattern": "tsconfig.doc.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29306,8 +29522,8 @@
       "kind": "file",
       "pattern": "tsconfig.paths.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29315,8 +29531,8 @@
       "kind": "file",
       "pattern": "tsconfig.main.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29324,8 +29540,8 @@
       "kind": "file",
       "pattern": "tsconfig.renderer.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29333,8 +29549,8 @@
       "kind": "file",
       "pattern": "tsconfig.server.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29342,8 +29558,8 @@
       "kind": "file",
       "pattern": "tsconfig.client.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29351,8 +29567,8 @@
       "kind": "file",
       "pattern": "tsconfig.declaration.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29360,8 +29576,8 @@
       "kind": "file",
       "pattern": "tsconfig.dev.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29369,8 +29585,8 @@
       "kind": "file",
       "pattern": "tsconfig.prod.json",
       "icon": {
-        "glyph": "",
-        "color": "#757575"
+        "glyph": "",
+        "color": "#0288D1"
       },
       "source_icon": "tsconfig"
     },
@@ -29801,8 +30017,8 @@
       "kind": "file",
       "pattern": "pnpm-lock.yaml",
       "icon": {
-        "glyph": "",
-        "color": "#e0e0e0"
+        "glyph": "",
+        "color": "#FFB300"
       },
       "source_icon": "pnpm"
     },
@@ -29810,8 +30026,8 @@
       "kind": "file",
       "pattern": "pnpm-workspace.yaml",
       "icon": {
-        "glyph": "",
-        "color": "#e0e0e0"
+        "glyph": "",
+        "color": "#FFB300"
       },
       "source_icon": "pnpm"
     },
@@ -29819,8 +30035,8 @@
       "kind": "file",
       "pattern": ".pnpmfile.cjs",
       "icon": {
-        "glyph": "",
-        "color": "#e0e0e0"
+        "glyph": "",
+        "color": "#FFB300"
       },
       "source_icon": "pnpm"
     },

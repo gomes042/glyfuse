@@ -357,6 +357,19 @@ mod tests {
             resolver.resolve("README.md", false, false).color,
             resolver.resolve("file.unknownthing", false, false).color
         );
+        for (name, glyph, color) in [
+            ("settings.toml", "\u{e6b2}", "#ef5350"),
+            (".prettierrc.json", "\u{e6b4}", "#f44336"),
+            ("pnpm-lock.yaml", "\u{e865}", "#ffb300"),
+            (".editorconfig", "\u{e652}", "#fafafa"),
+            ("eslint.config.js", "\u{e7d2}", "#4b32c3"),
+            ("tsconfig.base.json", "\u{e628}", "#0288d1"),
+            ("README.md", "\u{f02fc}", "#42a5f5"),
+        ] {
+            let icon = resolver.resolve(name, false, false);
+            assert_eq!(icon.glyph, glyph, "{name}");
+            assert_eq!(icon.color.to_lowercase(), color, "{name}");
+        }
         assert_eq!(
             resolver.resolve("C:\\repo\\SRC", true, false).glyph,
             src.glyph
